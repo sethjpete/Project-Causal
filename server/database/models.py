@@ -18,4 +18,14 @@ class User(db.Document):
     def check_password(self, password):
         return check_password_hash(self.password, password)
     
+    def modify(self, password, email):
+        if password:
+            self.password = password
+            return
+        if email:
+            self.email = email
+            return
+        raise ValueError('No data to modify')
+
+    
 User.register_delete_rule(Movie, 'added_by', db.CASCADE)

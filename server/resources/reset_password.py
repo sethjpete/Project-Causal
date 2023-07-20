@@ -71,4 +71,5 @@ class ResetPassword(Resource):
         except (DecodeError, InvalidTokenError):
             raise BadTokenError
         except Exception as e:
+            print(e)
             raise InternalServerError
