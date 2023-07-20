@@ -1,2 +1,6 @@
 .env
 *.pyc
+*.xcuserstate
+*.xcworkspacedata
+*.plist
+*.pbxproj
